@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logo</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"> -->
+    <link rel="stylesheet" href="css/logo.css?v=2">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
+</head>
+
+<body>
+
+    <header>
+        <section id="header">
+            <div class="header">
+                <p><img src="img/portfoliologoblack.png" id="logo" alt="logo"></p>
+                <nav>
+                    <ul>
+                        <li><a href="https://github.com/alecmcclendon?tab=repositories" target="_blank"><img src="home/github_link.png" alt=""></a></li>
+                        <!-- <li><a href="link">EN</a></li>
+                        <li><a href="home.html">日本語</a></li> -->
+                    </ul>
+                </nav>
+                <nav>
+                    <div class="ham-menu">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </header>
+    
+<!-- ---------------------------------------------------------------- -->
+
+<div class="off-screen-menu">
+    <nav>
+        <ul>
+            <li><a href="home.html">ホーム</a></li>
+            <li><a href="self-intro.html">私</a></li>
+            <li><a href="resume.html">履歴書</a></li>
+            <li id="works-item" class="list-item">
+                <a href="#">作品</a>
+              </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+      <ul>
+        <li><a href="programming.html">プログラミング</a></li>
+        <li><a href="logo.html">ロゴデザイン</a></li>
+        <li><a href="animation.html">アニメーション</a></li>
+        <li><a href="mockup.html">モックアップ</a></li>
+        <!-- <li><a href="other.html">その他</a></li> -->
+      </ul>
+    </div>
+  </div>
+
+<!-- ----------------------------------------------------- -->
+
+<div class="h1">
+  <h1>ロゴのデザイン</h1>
+</div>
+<!-- ---------------------------------------------------------------------------- -->
+
+  <!-- <ul class="single">
+    <li><img src="logo/fitsense_logo.jpg"></li>
+    <li><img src="logo/edens_auto_logo.jpg"></li>
+    <li><img src="logo/806coffee.jpg"></li>
+    <li><img src="logo/oracle_logo.jpg"></li>
+    <li><img src="logo/go_bananas_logo.jpg"></li>
+    <li><img src="logo/smug_mug_logo.jpg"></li>
+    <li><img src="logo/sorcery_logo.jpg"></li>
+    <li><img src="logo/union_eternity_logo.jpg"></li>
+</ul>
+
+<script>
+    $('.single').slick({
+    // autoplay: true, //自動再生
+    });
+</script> -->
+
+<!-- --------------------------------------------------- -->
+
+<!-- slider -->
+
+<div class="slider-container">
+    <!-- Arrow Buttons -->
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+
+    <div class="slider">
+        <div class="slide">
+            <img src="logo/fitsense_logo.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="logo/edens_auto_logo.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="logo/806coffee.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="logo/oracle_logo.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="logo/go_bananas_logo.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="logo/smug_mug_logo.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="logo/sorcery_logo.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="logo/union_eternity_logo.jpg" alt="">
+        </div>
+    </div>
+
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<!-- ------------------------------------------------------ -->
+    <script src="logo.js"></script>
+</body>
