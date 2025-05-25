@@ -15,4 +15,6 @@
 - Git / GitHub によるバージョン管理
 - GitHub Pages によるホスティング
 
-## [公開サイト](https://alecmcclendon.github.io/portfolio/)
+## 公開サイト
+
+https://alecmcclendon.github.io/portfolio/
