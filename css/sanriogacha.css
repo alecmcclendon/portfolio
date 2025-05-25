@@ -1,0 +1,35 @@
+
+.poster{
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
+
+.poster img{
+    width: 100%;
+}
+
+
+.button{
+    position: absolute;
+    right:0;
+    top: 0;
+    padding-right: 10vw;
+    padding-top: 95vw;
+}
+
+
+.button img{
+    width: 30vw;
+    /* transition: transform 0.5s ease */
+}
+
+.button img:hover {
+  transform: scale(1.1); 
+}
+
+
+
+*{
+    margin: 0;    /*border無し*/
+}
