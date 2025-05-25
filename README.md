@@ -16,5 +16,3 @@
 - GitHub Pages によるホスティング
 
 ## [公開サイト](https://alecmcclendon.github.io/portfolio/)
-
-https://alecmcclendon.github.io/portfolio/
