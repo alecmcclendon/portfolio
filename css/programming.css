@@ -285,7 +285,6 @@ button{
   font-size: 4.5vw;
   padding: .5vw auto;    
   border-radius: 12px; 
-  margin-top:3vw;
 }
 
 button:hover{
@@ -306,6 +305,7 @@ button:hover{
 .github-link img {
   width: 20%;      
   transition: transform .4s ease;
+  margin-bottom: 3vw;
 }
 
 .github-link img:hover{
