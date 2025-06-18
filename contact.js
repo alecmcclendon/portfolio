@@ -99,7 +99,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     });
 
     if (response.ok) {
-      statusMsg.innerText = 'メッセージを送信しました！';
+      statusMsg.innerText = '✅ メッセージを送信しました！';
       statusMsg.style.color = 'green';
       statusMsg.style.display = 'block';
       e.target.reset();
@@ -107,7 +107,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
       throw new Error('Webhook error');
     }
   } catch (err) {
-    statusMsg.innerText = 'メッセージを送信できませんでした。時間をおいて再度お試しください。';
+    statusMsg.innerText = '❌ メッセージを送信できませんでした。時間をおいて再度お試しください。';
     statusMsg.style.color = 'red';
     statusMsg.style.display = 'block';
   }
