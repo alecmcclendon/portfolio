@@ -94,6 +94,23 @@
     </div>
   </div>
 
+    <!-- ---------------------------------------------------------------------------- -->
+
+<!-- メッセージ -->
+
+<form id="contactForm">
+    <h2>ポートフォリオに関するご意見・ご感想をお聞かせください！</h2>
+    <label for="name">お名前・会社名（どちらでもOK）</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="message">メッセージ（良かった点や改善案など、自由にどうぞ)</label>
+    <textarea name="message" id="message" rows="5" required></textarea>
+
+    <button type="submit">送信</button>
+  </form>
+
+  <p id="statusMsg" style="display: none;"></p>
+
 <!-- ---------------------------------------------------------------------------- -->
 
     <script src="contact.js"></script>
