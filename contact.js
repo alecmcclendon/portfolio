@@ -74,3 +74,46 @@ function makeCopyBtn(btnId, textElId) {
 makeCopyBtn("copyEmailBtn", "emailText");
 makeCopyBtn("copyPhoneBtn", "phoneText");
 
+
+// -----------------------------------------------------------
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const name = e.target.name.value.trim();
+  const message = e.target.message.value.trim();
+  const webhookURL = 'https://discord.com/api/webhooks/1384707715049455707/qV-eUEoGs1g-i_zbKAQcFxxlIlb3rcIQ6gzxSP09nMK5GPMfuUI8mLAI8ok3v2lTCWXu';
+
+  // **ポートフォリオから届いた新着メッセージ**
+  const payload = {
+    content: `**----------📬---------------------------**\n**名前：** ${name}\n**メッセージ：**\n${message}`
+  };
+
+  const statusMsg = document.getElementById('statusMsg');
+
+  try {
+    const response = await fetch(webhookURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (response.ok) {
+      statusMsg.innerText = 'メッセージを送信しました！';
+      statusMsg.style.color = 'green';
+      statusMsg.style.display = 'block';
+      e.target.reset();
+    } else {
+      throw new Error('Webhook error');
+    }
+  } catch (err) {
+    statusMsg.innerText = 'メッセージを送信できませんでした。時間をおいて再度お試しください。';
+    statusMsg.style.color = 'red';
+    statusMsg.style.display = 'block';
+  }
+});
+
+
+
+
+
