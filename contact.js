@@ -82,7 +82,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
   const name = e.target.name.value.trim();
   const message = e.target.message.value.trim();
-  const webhookURL = 'https://discord.com/api/webhooks/1384707715049455707/qV-eUEoGs1g-i_zbKAQcFxxlIlb3rcIQ6gzxSP09nMK5GPMfuUI8mLAI8ok3v2lTCWXu';
+  const webhookURL = 'https://discord.com/api/webhooks/enter my webhook here';
 
   // **ポートフォリオから届いた新着メッセージ**
   const payload = {
