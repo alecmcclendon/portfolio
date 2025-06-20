@@ -77,16 +77,17 @@ makeCopyBtn("copyPhoneBtn", "phoneText");
 
 // -----------------------------------------------------------
 
+const webhookURL = "https://script.google.com/macros/s/AKfycbwMIJoz2e95UYVe-vEQzp-eQk0B6sXrPOJ_-4QYWgZ5a7j2zklLZyzhZVloht8jQCRwaQ/exec";
+
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
 
   const name = e.target.name.value.trim();
   const message = e.target.message.value.trim();
-  const webhookURL = 'https://discord.com/api/webhooks/enter my webhook here';
 
-  // **ポートフォリオから届いた新着メッセージ**
   const payload = {
-    content: `**----------📬---------------------------**\n**名前：** ${name}\n**メッセージ：**\n${message}`
+    name: name,
+    message: message
   };
 
   const statusMsg = document.getElementById('statusMsg');
@@ -98,15 +99,18 @@ document.getElementById('contactForm').addEventListener('submit', async function
       body: JSON.stringify(payload)
     });
 
-    if (response.ok) {
+    const text = await response.text();
+
+    if (text.includes("Success")) {
       statusMsg.innerText = '✅ メッセージを送信しました！';
       statusMsg.style.color = 'green';
       statusMsg.style.display = 'block';
       e.target.reset();
     } else {
-      throw new Error('Webhook error');
+      throw new Error('Webhook error: ' + text);
     }
   } catch (err) {
+    console.error(err);
     statusMsg.innerText = '❌ メッセージを送信できませんでした。時間をおいて再度お試しください。';
     statusMsg.style.color = 'red';
     statusMsg.style.display = 'block';
