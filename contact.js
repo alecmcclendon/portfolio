@@ -77,7 +77,9 @@ makeCopyBtn("copyPhoneBtn", "phoneText");
 
 // -----------------------------------------------------------
 
-const webhookURL = "https://script.google.com/macros/s/AKfycbwMIJoz2e95UYVe-vEQzp-eQk0B6sXrPOJ_-4QYWgZ5a7j2zklLZyzhZVloht8jQCRwaQ/exec";
+const webhookURL = "https://port-mail.malec7858.workers.dev/";
+
+
 
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -116,6 +118,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     statusMsg.style.display = 'block';
   }
 });
+
 
 
 
