@@ -516,7 +516,7 @@ html{
     
     .card-back-p p {
         width: 90%;
-        text-align: center;
+/*         text-align: center; */
         padding-top: 1.5vw;
         font-size: 1.3vw;
     }
