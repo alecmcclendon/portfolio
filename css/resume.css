@@ -258,14 +258,15 @@ html{
 
 
     .resume{
-        padding-top: 50px;
+        padding: 50px 20vw 0;
     }
     .resume img{
 
         display: block;
         margin-right: auto;
         margin-left: auto;
-        width: 90%;
+        width: 100%;
+        padding-bottom: 50px;
 
     }
 
