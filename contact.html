@@ -12,7 +12,7 @@
     <header>
         <section id="header">
             <div class="header">
-                <p><img src="img/portfoliologoblack.png" id="logo" alt="logo"></p>
+              <a href="index.html"><img src="img/portfoliologoblack.png" id="logo" alt="logo"></a>
                 <nav>
                     <ul>
                       <li><a href="https://github.com/alecmcclendon?tab=repositories" target="_blank"><img src="home/github_link.png" alt=""></a></li>
@@ -33,30 +33,30 @@
 <!-- ---------------------------------------------------------------- -->
 
 <div class="off-screen-menu">
-    <nav>
-        <ul>
-            <li><a href="index.html">ホーム</a></li>
-            <li><a href="self-intro.html">私</a></li>
-            <li><a href="resume.html">履歴書</a></li>
-            <li id="works-item" class="list-item">
-                <a href="#">作品</a>
-              </li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+  <nav>
+      <ul>
+          <li><a href="self-intro.html">私</a></li>
+          <li><a href="resume.html">履歴書</a></li>
+          <li id="works-item" class="list-item">
+              <a href="#">作品</a>
+            </li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+  </nav>
 </div>
 
 <div id="popup" class="popup">
-    <div class="popup-content">
-      <ul>
-        <li><a href="programming.html">プログラミング</a></li>
-        <li><a href="logo.html">ロゴデザイン</a></li>
-        <li><a href="animation.html">アニメーション</a></li>
-        <li><a href="mockup.html">モックアップ</a></li>
-        <!-- <li><a href="other.html">その他</a></li> -->
-      </ul>
-    </div>
+  <div class="popup-content">
+    <ul>
+      <!-- <li><a href="#">Web制作</a></li> -->
+      <li><a href="programming.html">プログラミング</a></li>
+      <li><a href="banner.html">バナーデザイン</a></li>
+      <li><a href="logo.html">ロゴデザイン</a></li>
+      <li><a href="animation.html">アニメーション</a></li>
+      <li><a href="mockup.html">モックアップ</a></li>
+    </ul>
   </div>
+</div>
 
 <!-- ---------------------------------------------------------------------------- -->
 
@@ -66,39 +66,13 @@
 
 <!-- ---------------------------------------------------------------------------- -->
 
-<div class="contact">
-    <div class="email">
-      <h4>E-mail :</h4>
-      <p id="emailText">alecmcclendonwork@gmail.com</p>
-      <span class="tooltip">
-        <img 
-          id="copyEmailBtn" 
-          src="contact/copy.png" 
-          alt="Copy email" 
-          style="cursor: pointer;">
-        <!-- Show this only on click -->
-        <span class="tooltiptext">コピーしました</span>
-      </span>
-    </div>
-    <div class="phone">
-      <h4>電話 :</h4>
-      <p id="phoneText">080-7346-7255</p>
-      <span class="tooltip">
-        <img 
-          id="copyPhoneBtn" 
-          src="contact/copy.png" 
-          alt="Copy phone" 
-          style="cursor: pointer;">
-        <span class="tooltiptext">コピーしました</span>
-      </span>
-    </div>
-  </div>
 
-    <!-- ---------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------- -->
 
 <!-- メッセージ -->
 
 <form id="contactForm">
+
     <h2>ポートフォリオに関するご意見・ご感想をお聞かせください！</h2>
     <label for="name">お名前・会社名（どちらでもOK）</label>
     <input type="text" name="name" id="name" required>
@@ -111,10 +85,27 @@
 
   <p id="statusMsg" style="display: none;"></p>
 
+
+<!-- ---------------------------------------------------------------------------- -->
+  
+<div class="contact">
+  <div class="email">
+    <h4>E-mail :</h4>
+    <a href="mailto:alecmcclendonwork@gmail.com" id="emailText">
+      alecmcclendonwork@gmail.com
+    </a>
+  </div>
+
+  <div class="phone">
+    <h4>電話 :</h4>
+    <a id="phoneText">080-7346-7255</a>
+  </div>
+</div>
+<!-- <footer>© 2025 AlecRenMcClendon</footer> -->
+
 <!-- ---------------------------------------------------------------------------- -->
 
-<footer><p> </p></footer>
-    
-<script src="contact.js"></script>
+
+    <script src="contact.js"></script>
 </body>
 </html>

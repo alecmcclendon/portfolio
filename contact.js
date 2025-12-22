@@ -74,7 +74,6 @@ function makeCopyBtn(btnId, textElId) {
 makeCopyBtn("copyEmailBtn", "emailText");
 makeCopyBtn("copyPhoneBtn", "phoneText");
 
-
 // -----------------------------------------------------------
 
 const webhookURL = "https://port-mail.malec7858.workers.dev/";
@@ -118,8 +117,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
     statusMsg.style.display = 'block';
   }
 });
-
-
 
 
 
