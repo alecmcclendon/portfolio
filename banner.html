@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>banner</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"> -->
+    <link rel="stylesheet" href="css/banner.css?v=2">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
+</head>
+
+<body>
+
+    <header>
+        <section id="header">
+            <div class="header">
+                <a href="index.html"><img src="img/portfoliologoblack.png" id="logo" alt="logo"></a>
+                <nav>
+                    <ul>
+                        <li><a href="https://github.com/alecmcclendon?tab=repositories" target="_blank"><img src="home/github_link.png" alt=""></a></li>
+                        <!-- <li><a href="link">EN</a></li>
+                        <li><a href="home.html">日本語</a></li> -->
+                    </ul>
+                </nav>
+                <nav>
+                    <div class="ham-menu">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </header>
+    
+<!-- ---------------------------------------------------------------- -->
+
+<div class="off-screen-menu">
+    <nav>
+        <ul>
+            <li><a href="self-intro.html">私</a></li>
+            <li><a href="resume.html">履歴書</a></li>
+            <li id="works-item" class="list-item">
+                <a href="#">作品</a>
+              </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+      <ul>
+        <!-- <li><a href="#">Web制作</a></li> -->
+        <li><a href="programming.html">プログラミング</a></li>
+        <li><a href="banner.html">バナーデザイン</a></li>
+        <li><a href="logo.html">ロゴデザイン</a></li>
+        <li><a href="animation.html">アニメーション</a></li>
+        <li><a href="mockup.html">モックアップ</a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- ----------------------------------------------------- -->
+
+<div class="h1">
+  <h1>ロゴのデザイン</h1>
+</div>
+
+
+<!-- slider -->
+
+<div class="slider-container">
+    <!-- Arrow Buttons -->
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+
+    <div class="slider">
+        <div class="slide">
+            <img src="banner/siteKV2.png" alt="">
+        </div>
+        <div class="slide">
+            <img src="banner/colorful-bag-hold.png" alt="">
+        </div>
+        <div class="slide">
+            <img src="banner/siteKV-diag.png" alt="">
+        </div>
+        <div class="slide">
+            <img src="banner/ripped_img.png" alt="">
+        </div>
+    </div>
+
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<!-- ------------------------------------------------------ -->
+    <script src="banner.js"></script>
+</body>
