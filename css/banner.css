@@ -253,62 +253,200 @@ html body header .header .ham-menu.active span:nth-child(2) {
   font-weight: 700;
 }
 
+
+
 /* ======================= */
-/* Slider */
+/* Gallery grid (extra-pro) */
 /* ======================= */
-.slider-container {
-  position: relative;
-  width: 90%;
+
+.gallery {
+  width: min(1100px, 90%);
+  margin: 24px auto;
+  display: grid;
+  gap: 16px;
+
+  /* 2 columns on small, 3 on medium, 4 on large */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Each tile is a button for accessibility */
+.thumb {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 14px;
   overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
+
+  /* Cleaner “card” look */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.slider {
-  display: flex;
-  transition: transform 0.5s ease;
+/* Nice focus ring for keyboard users */
+.thumb:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, 0.35);
+  outline-offset: 3px;
 }
 
-.slide {
-  min-width: 100%;
+.thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+}
+
+.thumb img {
+  width: 100%;
+
+  /* Use a consistent aspect ratio so the grid looks super tidy */
+  aspect-ratio: 4 / 3;
+  height: auto;
+
+  object-fit: cover;
+  display: block;
+
+  /* Prevent “ghost drag” */
+  -webkit-user-drag: none;
+  user-select: none;
+
+  /* Subtle zoom */
+  transform: scale(1);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.thumb:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.05);
+}
+
+/* Optional: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .thumb,
+  .thumb img {
+    transition: none;
+  }
+}
+
+/* ======================= */
+/* Lightbox modal (extra-pro) */
+/* ======================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999; /* above header */
+
+  /* fade animation */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.lightbox.is-open {
+  display: block;
+  opacity: 1;
+}
+
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+
+  /* Slightly more “premium” backdrop */
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(2px);
+}
+
+/* Centers the image nicely, even on tall screens */
+.lightbox__panel {
+  position: relative;
+  max-width: min(1100px, 92vw);
+  max-height: 88vh;
+
+  margin: 6vh auto 0;
+  z-index: 1;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* tiny pop-in */
+  transform: scale(0.98);
+  transition: transform 0.18s ease;
 }
 
-/* Keep media flexible */
-img,
-video {
+.lightbox.is-open .lightbox__panel {
+  transform: scale(1);
+}
+
+.lightbox__img {
   max-width: 100%;
+  max-height: 88vh;
+  width: auto;
   height: auto;
+
+  border-radius: 16px;
+  background: #fff;
+
+  /* crisp “hero” shadow */
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
-/* Slider buttons (avoid styling ALL buttons site-wide) */
-.slider-container .prev,
-.slider-container .next {
+/* Close button */
+.lightbox__close {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: -14px;
+  right: -14px;
 
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
   border: none;
-
-  font-size: 24px;
   cursor: pointer;
-  padding: 10px;
-  z-index: 8;
+
+  font-size: 30px;
+  line-height: 42px;
+
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+
+  transition: transform 0.16s ease, background 0.16s ease;
 }
 
-.slider-container .prev:hover,
-.slider-container .next:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+.lightbox__close:hover {
+  background: #fff;
+  transform: scale(1.05);
 }
 
-.slider-container .prev {
-  left: 0;
+.lightbox__close:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
 }
 
-.slider-container .next {
-  right: 0;
+/* Optional: mobile-friendly spacing */
+@media (max-width: 420px) {
+  .lightbox__close {
+    top: -8px;
+    right: -8px;
+  }
+}
+
+/* Optional: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox__panel,
+  .lightbox__close {
+    transition: none;
+  }
 }
