@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mockup</title>
-    <link rel="stylesheet" href="css/mockup.css?v=2">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mockup</title>
+  <link rel="stylesheet" href="css/mockup.css?v=2" />
 </head>
 
 <body>
+  <header>
+    <section id="header">
+      <div class="header">
+        <a href="index.html">
+          <img src="img/portfoliologoblack.png" id="logo" alt="logo" />
+        </a>
 
-    <header>
-        <section id="header">
-            <div class="header">
-                <a href="index.html"><img src="img/portfoliologoblack.png" id="logo" alt="logo"></a>
-                <nav>
-                    <ul>
-                        <li><a href="https://github.com/alecmcclendon?tab=repositories" target="_blank"><img src="home/github_link.png" alt=""></a></li>
-                        <!-- <li><a href="link">EN</a></li>
-                        <li><a href="home.html">日本語</a></li> -->
-                    </ul>
-                </nav>
-                <nav>
-                    <div class="ham-menu">
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-            </div>
-        </section>
-    </header>
-    
-<!-- ---------------------------------------------------------------- -->
+        <nav>
+          <ul>
+            <li>
+              <a href="https://github.com/alecmcclendon?tab=repositories" target="_blank">
+                <img src="home/github_link.png" alt="" />
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-<div class="off-screen-menu">
+        <nav>
+          <div class="ham-menu" aria-label="menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <!-- Off-screen menu -->
+  <div class="off-screen-menu">
     <nav>
-        <ul>
-            <li><a href="self-intro.html">私</a></li>
-            <li><a href="resume.html">履歴書</a></li>
-            <li id="works-item" class="list-item">
-                <a href="#">作品</a>
-              </li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <ul>
+        <li><a href="self-intro.html">私</a></li>
+        <li><a href="resume.html">履歴書</a></li>
+        <li id="works-item" class="list-item"><a href="#">作品</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-</div>
+  </div>
 
-<div id="popup" class="popup">
+  <!-- Works popup -->
+  <div id="popup" class="popup">
     <div class="popup-content">
       <ul>
         <li><a href="webDesign.html">Web制作</a></li>
@@ -57,42 +60,50 @@
       </ul>
     </div>
   </div>
-<!-- ----------------------------------------------------- -->
 
-<div class="h1">
-  <h1>モックアップ</h1>
-</div>
-<!-- ---------------------------------------------------------------------------- -->
+  <!-- Page heading -->
+  <div class="h1">
+    <h1>モックアップ</h1>
+  </div>
 
-<!-- slider -->
+  <!-- ======================= -->
+  <!-- Gallery -->
+  <!-- ======================= -->
+  <div class="gallery" id="gallery">
+    <button class="thumb" type="button">
+      <img src="mockup/go_bananas.jpg" alt="Go Bananas mockup" loading="lazy" />
+    </button>
 
-<div class="slider-container">
-    <!-- Arrow Buttons -->
-    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="thumb" type="button">
+      <img src="mockup/806_coffee.jpg" alt="806 Coffee mockup" loading="lazy" />
+    </button>
 
-    <div class="slider">
-        <div class="slide">
-            <img src="mockup/go_bananas.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img src="mockup/806_coffee.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img src="mockup/edens _automotive.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img src="mockup/SmugMug.jpg" alt="">
-        </div>
+    <button class="thumb" type="button">
+      <img src="mockup/edens _automotive.jpg" alt="Eden's Automotive mockup" loading="lazy" />
+    </button>
+
+    <button class="thumb" type="button">
+      <img src="mockup/SmugMug.jpg" alt="SmugMug mockup" loading="lazy" />
+    </button>
+  </div>
+
+  <!-- ======================= -->
+  <!-- Lightbox -->
+  <!-- ======================= -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" data-close="true"></div>
+
+    <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lightbox__close" type="button" aria-label="Close" title="Close">
+        &times;
+      </button>
+
+      <img class="lightbox__img" id="lightboxImg" alt="" />
     </div>
+  </div>
 
-    <button class="next" onclick="changeSlide(1)">&#10095;</button>
-</div>
+  <footer><p> </p></footer>
 
-<!-- ---------------------------------------------- -->
-
-<footer><p> </p></footer>
-
-<!-- ----------------------------------------------- -->
-
-    <script src="mockup.js"></script>
+  <script src="mockup.js"></script>
 </body>
+</html>

@@ -1,131 +1,106 @@
+// =======================
+// Hamburger menu
+// =======================
 const hamMenu = document.querySelector(".ham-menu");
 const offScreenMenu = document.querySelector(".off-screen-menu");
 const worksItem = document.getElementById("works-item");
 const popup = document.getElementById("popup");
 
-hamMenu.addEventListener("click", () => {
-  hamMenu.classList.toggle("active");
-  offScreenMenu.classList.toggle("active");
-});
+if (hamMenu && offScreenMenu) {
+  hamMenu.addEventListener("click", () => {
+    hamMenu.classList.toggle("active");
+    offScreenMenu.classList.toggle("active");
+  });
 
-// -----------------------------------------------------------
+  // Optional keyboard support
+  hamMenu.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      hamMenu.click();
+    }
+  });
+}
 
-
+// =======================
+// Works popup
+// =======================
 if (worksItem && popup) {
-  // Toggle selected class and popup
-  worksItem.addEventListener("click", function (e) {
+  worksItem.addEventListener("click", (e) => {
     e.preventDefault();
-    e.stopPropagation(); // Prevent click from bubbling to document
+    e.stopPropagation();
 
     const isSelected = worksItem.classList.contains("selected");
 
-    // Remove all other selected classes
     document.querySelectorAll(".off-screen-menu li").forEach((li) => {
       li.classList.remove("selected");
     });
 
-    // Hide popup by default
     popup.style.display = "none";
 
-    // Toggle based on previous state
     if (!isSelected) {
       worksItem.classList.add("selected");
       popup.style.display = "block";
     }
   });
 
-// --------------------------------------------------
-
-  // Click outside to close
-  document.addEventListener("click", function (e) {
-    if (
-      !popup.contains(e.target) &&
-      !worksItem.contains(e.target)
-    ) {
+  document.addEventListener("click", (e) => {
+    if (!popup.contains(e.target) && !worksItem.contains(e.target)) {
       worksItem.classList.remove("selected");
       popup.style.display = "none";
     }
   });
 }
 
-// --------------------------------------------------------
+// =======================
+// Lightbox (images)
+// =======================
+const gallery = document.getElementById("gallery");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const closeBtn = document.querySelector(".lightbox__close");
 
+function openLightbox(src, alt) {
+  if (!lightboxImg || !lightbox) return;
 
-// -----------------------------------------------------
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || "";
 
-// slider
-
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-let isMouseDown = false;
-let startX;
-let scrollLeft;
-let walk = 0;
-
-const slider = document.querySelector('.slider');
-
-function changeSlide(direction) {
-    currentSlideIndex += direction;
-
-    if (currentSlideIndex >= totalSlides) {
-        currentSlideIndex = 0;  // Loop back to the first slide
-    } else if (currentSlideIndex < 0) {
-        currentSlideIndex = totalSlides - 1;  // Loop to the last slide
-    }
-
-    updateSliderPosition();
+  lightbox.classList.add("is-open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 }
 
-function updateSliderPosition() {
-    const newTransformValue = -currentSlideIndex * 100 + '%';
-    slider.style.transition = 'transform 0.3s ease';  // Smooth transition for slide changes
-    slider.style.transform = `translateX(${newTransformValue})`;
+function closeLightbox() {
+  if (!lightboxImg || !lightbox) return;
+
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+  document.body.style.overflow = "";
 }
 
-// Add mouse down, move, and up events for dragging functionality
-slider.addEventListener('mousedown', (e) => {
-    isMouseDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    walk = 0; // Reset walk distance
-    slider.style.transition = 'none'; // Disable transition during drag
-});
+if (gallery) {
+  gallery.addEventListener("click", (e) => {
+    const btn = e.target.closest("button.thumb");
+    if (!btn) return;
 
-// Prevent default image dragging behavior (the "little image of the world" issue)
-slider.addEventListener('dragstart', (e) => {
-    e.preventDefault();
-});
+    const img = btn.querySelector("img");
+    if (!img) return;
 
-slider.addEventListener('mouseleave', () => {
-    isMouseDown = false;
-});
+    openLightbox(img.src, img.alt);
+  });
+}
 
-slider.addEventListener('mouseup', () => {
-    isMouseDown = false;
-    
-    // Snap to the nearest slide after mouse release
-    if (Math.abs(walk) > window.innerWidth / 4) {
-        if (walk > 0) {
-            changeSlide(-1); // Move to previous slide
-        } else {
-            changeSlide(1); // Move to next slide
-        }
-    } else {
-        updateSliderPosition(); // Return to the current slide
-    }
-});
+if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
 
-slider.addEventListener('mousemove', (e) => {
-    if (!isMouseDown) return;
-    e.preventDefault();
+if (lightbox) {
+  lightbox.addEventListener("click", (e) => {
+    if (e.target.dataset.close === "true") closeLightbox();
+  });
+}
 
-    const x = e.pageX - slider.offsetLeft;
-    walk = (x - startX);  // This is the distance the mouse has moved
-
-    // Update slider's transform property to reflect dragging motion
-    slider.style.transform = `translateX(${-(currentSlideIndex * 100) + (walk / window.innerWidth) * 100}%)`;
-});
-
-slider.addEventListener('dragstart', (e) => {
-    e.preventDefault();
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && lightbox && lightbox.classList.contains("is-open")) {
+    closeLightbox();
+  }
 });

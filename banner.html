@@ -70,29 +70,38 @@
 </div>
 
 
-<!-- slider -->
+<!-- ------------------------------------------- -->
 
-<div class="slider-container">
-    <!-- Arrow Buttons -->
-    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-
-    <div class="slider">
-        <div class="slide">
-            <img src="banner/siteKV2.png" alt="">
-        </div>
-        <div class="slide">
-            <img src="banner/colorful-bag-hold.png" alt="">
-        </div>
-        <div class="slide">
-            <img src="banner/siteKV-diag.png" alt="">
-        </div>
-        <div class="slide">
-            <img src="banner/ripped_img.png" alt="">
-        </div>
+<div class="gallery" id="gallery">
+    <button class="thumb" type="button">
+      <img src="banner/siteKV2.png" alt="Banner design 1" loading="lazy">
+    </button>
+  
+    <button class="thumb" type="button">
+      <img src="banner/colorful-bag-hold.png" alt="Banner design 2" loading="lazy">
+    </button>
+  
+    <button class="thumb" type="button">
+      <img src="banner/siteKV-diag.png" alt="Banner design 3" loading="lazy">
+    </button>
+  
+    <button class="thumb" type="button">
+      <img src="banner/ripped_img.png" alt="Banner design 4" loading="lazy">
+    </button>
+  </div>
+  
+  <!-- Lightbox modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" data-close="true"></div>
+  
+    <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lightbox__close" type="button" aria-label="Close" title="Close">
+        &times;
+      </button>
+  
+      <img class="lightbox__img" id="lightboxImg" alt="">
     </div>
-
-    <button class="next" onclick="changeSlide(1)">&#10095;</button>
-</div>
+  </div>
 
 <!-- ------------------------------------------------------ -->
     <script src="banner.js"></script>
