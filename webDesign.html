@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>programming</title>
-    <link rel="stylesheet" href="css/webDesign.css?v=2">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>programming</title>
+  <link rel="stylesheet" href="css/webDesign.css?v=3" />
 </head>
 
 <body>
+  <header>
+    <section id="header">
+      <div class="header">
+        <a href="index.html">
+          <img src="img/portfoliologoblack.png" id="logo" alt="logo" />
+        </a>
 
-    <header>
-        <section id="header">
-            <div class="header">
-                <a href="index.html"><img src="img/portfoliologoblack.png" id="logo" alt="logo"></a>
-                <nav>
-                    <ul>
-                        <li><a href="https://github.com/alecmcclendon?tab=repositories" target="_blank"><img src="home/github_link.png" alt=""></a></li>
-                        <!-- <li><a href="link">EN</a></li>
-                        <li><a href="home.html">日本語</a></li> -->
-                    </ul>
-                </nav>
-                <nav>
-                    <div class="ham-menu">
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-            </div>
-        </section>
-    </header>
-    
-<!-- ---------------------------------------------------------------- -->
+        <nav class="top-links">
+          <ul>
+            <li>
+              <a href="https://github.com/alecmcclendon?tab=repositories" target="_blank" rel="noopener">
+                <img src="home/github_link.png" alt="GitHub" />
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-<div class="off-screen-menu">
+        <nav>
+          <div class="ham-menu" aria-label="menu button" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </section>
+  </header>
+
+  <!-- Off-screen menu -->
+  <div class="off-screen-menu">
     <nav>
-        <ul>
-            <li><a href="self-intro.html">私</a></li>
-            <li><a href="resume.html">履歴書</a></li>
-            <li id="works-item" class="list-item">
-                <a href="#">作品</a>
-              </li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <ul>
+        <li><a href="self-intro.html">私</a></li>
+        <li><a href="resume.html">履歴書</a></li>
+        <li id="works-item" class="list-item"><a href="#">作品</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-</div>
+  </div>
 
-<div id="popup" class="popup">
+  <!-- Popup -->
+  <div id="popup" class="popup">
     <div class="popup-content">
       <ul>
         <li><a href="webDesign.html">Web制作</a></li>
         <li><a href="programming.html">プログラミング</a></li>
-        <li><a href="banner.html">バナーデザイン</a></li>
+        <li><a href="banner.html">グラフィック制作</a></li>
         <li><a href="logo.html">ロゴデザイン</a></li>
         <li><a href="animation.html">アニメーション</a></li>
         <li><a href="mockup.html">モックアップ</a></li>
@@ -58,24 +61,32 @@
     </div>
   </div>
 
-<!-- ---------------------------------------------------------------------------- -->
-
-<div class="h1">
+  <!-- Heading -->
+  <div class="h1">
     <h1>Web制作</h1>
   </div>
 
-<!-- ---------------------------------------------------------------------------- -->
+  <!-- Projects -->
+  <main class="programming_projects" aria-label="projects">
+    <div class="project-row">
+      <a class="project-btn" href="https://alecmcclendon.github.io/ZenHP" target="_blank" rel="noopener">
+        ZenHP
+      </a>
+      <a class="github-link" href="https://github.com/alecmcclendon/ZenHP" target="_blank" rel="noopener">
+        <img src="programming/github_link.png" alt="ZenHP GitHub" />
+      </a>
+    </div>
 
-<div class="programming_projects">
-        <!-- <a href="sanriogacha.html" class=".gacha-button" target="_blank"><img src="programming/sanrio_button.png" alt="Image 1"></a> -->
-        <a href="https://alecmcclendon.github.io/ZenHP" target="_blank"> <button class="">ZenHP</button></a>
-        <a href="https://github.com/alecmcclendon/ZenHP" class="github-link" target="_blank"><img src="programming/github_link.png" alt=""></a>
-        <a href="sanriogacha.html" target="_blank"> <button>Sanrioガチャ!!</button></a>
-        <a href="https://github.com/alecmcclendon/sanriogacha" class="github-link" target="_blank"><img src="programming/github_link.png" alt=""></a>
-</div>
+    <div class="project-row">
+      <a class="project-btn" href="sanriogacha.html" target="_blank" rel="noopener">
+        Sanrioガチャ!!
+      </a>
+      <a class="github-link" href="https://github.com/alecmcclendon/sanriogacha" target="_blank" rel="noopener">
+        <img src="programming/github_link.png" alt="Sanrioガチャ GitHub" />
+      </a>
+    </div>
+  </main>
 
-<!-- ---------------------------------------------------------------------------- -->
-
-    <script src="webDesign.js"></script>
+  <script src="webDesign.js"></script>
 </body>
 </html>
