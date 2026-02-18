@@ -1,100 +1,128 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>resume</title>
-    <link rel="stylesheet" href="css/resume.css?v=2">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>resume</title>
+  <link rel="stylesheet" href="css/resume.css?v=3" />
 </head>
 
 <body>
+  <!-- ==================
+  HEADER
+  ================== -->
+  <header>
+    <section id="header">
+      <div class="header">
+        <a class="logo-link" href="index.html" aria-label="ホームへ">
+          <img src="img/portfoliologoblack.png" id="logo" alt="logo" />
+        </a>
 
-    <header>
-        <section id="header">
-            <div class="header">
-                <a href="index.html"><img src="img/portfoliologoblack.png" id="logo" alt="logo"></a>
-                <nav>
-                    <ul>
-                        <li><a href="https://github.com/alecmcclendon?tab=repositories" target="_blank"><img src="home/github_link.png" alt=""></a></li>
-                        <!-- <li><a href="link">EN</a></li>
-                        <li><a href="home.html">日本語</a></li> -->
-                    </ul>
-                </nav>
-                <nav>
-                    <div class="ham-menu">
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-            </div>
-        </section>
-    </header>
-    
-<!-- ---------------------------------------------------------------- -->
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/alecmcclendon?tab=repositories"
+                target="_blank"
+                rel="noopener"
+              >
+                <img src="home/github_link.png" alt="GitHub" />
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-<div class="off-screen-menu">
-    <nav>
-        <ul>
-            <li><a href="index.html">ホーム</a></li>
-            <li><a href="self-intro.html">私</a></li>
-            <li><a href="resume.html">履歴書</a></li>
-            <li id="works-item" class="list-item">
-                <a href="#">作品</a>
-              </li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</div>
+        <nav>
+          <div class="ham-menu" aria-label="menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </section>
+  </header>
 
-<div id="popup" class="popup">
-    <div class="popup-content">
-      <ul>
-        <li><a href="webDesign.html">Web制作</a></li>
-        <li><a href="programming.html">プログラミング</a></li>
-        <li><a href="banner.html">グラフィック制作</a></li>
-        <li><a href="logo.html">ロゴデザイン</a></li>
-        <li><a href="animation.html">アニメーション</a></li>
-        <li><a href="mockup.html">モックアップ</a></li>
+  <!-- ==================
+  FULLSCREEN MENU
+  ================== -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-backdrop" data-close="true"></div>
+
+    <nav class="menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+      <ul class="menu-list">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="self-intro.html">私</a></li>
+        <li><a href="resume.html">履歴書</a></li>
+
+        <li class="has-submenu" id="worksItem">
+          <button type="button" class="submenu-toggle" aria-expanded="false">
+            作品 <span class="chev" aria-hidden="true">▾</span>
+          </button>
+
+          <ul class="submenu" id="worksSubmenu">
+            <li><a href="webDesign.html">Web制作</a></li>
+            <li><a href="programming.html">プログラミング</a></li>
+            <li><a href="banner.html">グラフィック制作</a></li>
+            <li><a href="logo.html">ロゴデザイン</a></li>
+            <li><a href="animation.html">アニメーション</a></li>
+            <li><a href="mockup.html">モックアップ</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
-<!-- ---------------------------------------------------------------------------- -->
 
-<!-- <div class="h1">
-    <h1>履歴書</h1>
-</div> -->
+  <!-- ==================
+  PAGE CONTENT
+  ================== -->
+  <div class="resume">
+    <img src="resume/履歴書1.png" alt="履歴書1" />
+    <img src="resume/履歴書2.png" alt="履歴書2" />
+  </div>
 
-<div class="resume">
-    <img src="resume/履歴書1.png" alt="">
-    <img src="resume/履歴書2.png" alt="">
-</div>
+  <div class="print_button">
+    <button type="button" id="printBtn">Print</button>
+  </div>
 
-<!-- -------------------------------------------------- -->
+  <!-- ==================
+  FOOTER
+  ================== -->
+  <footer class="mini-footer" aria-label="Site footer links">
+    <nav class="footer-nav" aria-label="Main pages">
+      <a href="index.html">ホーム</a>
+      <span class="sep" aria-hidden="true">｜</span>
 
-<div class="print_button">
-    <button onclick="printImage()">Print</button>
+      <a href="self-intro.html">私</a>
+      <span class="sep" aria-hidden="true">｜</span>
 
-    <script>
-    function printImage() {
-        const win = window.open('', '_blank');
-        win.document.write(`
-        <html><head><title>Print</title></head>
-        <body style="margin:0">
-            <img src="resume/履歴書1.png" onload="window.print(); window.close();" style="width:95%; display:block; margin: auto;">
-            <img src="resume/履歴書2.png" onload="window.print(); window.close();" style="width:95%; display:block; margin: auto;">
+      <a href="resume.html">履歴書</a>
+      <span class="sep" aria-hidden="true">｜</span>
 
-        </body></html>
-        `);
-        win.document.close();
-    }
-    </script>
-</div>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-<!-- -------------------------------------------------- -->
+    <nav class="footer-subnav" aria-label="Works pages">
+      <a href="webDesign.html">Web制作</a>
+      <span class="sep" aria-hidden="true">｜</span>
 
-<footer><p> </p></footer>
+      <a href="programming.html">プログラミング</a>
+      <span class="sep" aria-hidden="true">｜</span>
 
+      <a href="banner.html">グラフィック制作</a>
+      <span class="sep" aria-hidden="true">｜</span>
 
-    <script src="resume.js"></script>
+      <a href="logo.html">ロゴデザイン</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="animation.html">アニメーション</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="mockup.html">モックアップ</a>
+    </nav>
+  </footer>
+
+  <script src="resume.js"></script>
 </body>
 </html>

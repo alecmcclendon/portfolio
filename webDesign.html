@@ -3,22 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>programming</title>
-  <link rel="stylesheet" href="css/webDesign.css?v=3" />
+  <title>webDesign</title>
+  <link rel="stylesheet" href="css/webDesign.css?v=4" />
 </head>
 
 <body>
+  <!-- ==================
+  HEADER
+  ================== -->
   <header>
     <section id="header">
       <div class="header">
-        <a href="index.html">
+        <a class="logo-link" href="index.html" aria-label="ホームへ">
           <img src="img/portfoliologoblack.png" id="logo" alt="logo" />
         </a>
 
-        <nav class="top-links">
+        <nav>
           <ul>
             <li>
-              <a href="https://github.com/alecmcclendon?tab=repositories" target="_blank" rel="noopener">
+              <a
+                href="https://github.com/alecmcclendon?tab=repositories"
+                target="_blank"
+                rel="noopener"
+              >
                 <img src="home/github_link.png" alt="GitHub" />
               </a>
             </li>
@@ -26,7 +33,7 @@
         </nav>
 
         <nav>
-          <div class="ham-menu" aria-label="menu button" role="button" tabindex="0">
+          <div class="ham-menu" aria-label="menu" role="button" tabindex="0">
             <span></span>
             <span></span>
           </div>
@@ -35,45 +42,80 @@
     </section>
   </header>
 
-  <!-- Off-screen menu -->
-  <div class="off-screen-menu">
-    <nav>
-      <ul>
+  <!-- ==================
+  FULLSCREEN MENU
+  ================== -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-backdrop" data-close="true"></div>
+
+    <nav class="menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+      <ul class="menu-list">
         <li><a href="index.html">ホーム</a></li>
         <li><a href="self-intro.html">私</a></li>
         <li><a href="resume.html">履歴書</a></li>
-        <li id="works-item" class="list-item"><a href="#">作品</a></li>
+
+        <li class="has-submenu" id="worksItem">
+          <button type="button" class="submenu-toggle" aria-expanded="false">
+            作品 <span class="chev" aria-hidden="true">▾</span>
+          </button>
+
+          <ul class="submenu" id="worksSubmenu">
+            <li><a href="webDesign.html">Web制作</a></li>
+            <li><a href="programming.html">プログラミング</a></li>
+            <li><a href="banner.html">グラフィック制作</a></li>
+            <li><a href="logo.html">ロゴデザイン</a></li>
+            <li><a href="animation.html">アニメーション</a></li>
+            <li><a href="mockup.html">モックアップ</a></li>
+          </ul>
+        </li>
+
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- Popup -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <ul>
-        <li><a href="webDesign.html">Web制作</a></li>
-        <li><a href="programming.html">プログラミング</a></li>
-        <li><a href="banner.html">グラフィック制作</a></li>
-        <li><a href="logo.html">ロゴデザイン</a></li>
-        <li><a href="animation.html">アニメーション</a></li>
-        <li><a href="mockup.html">モックアップ</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Heading -->
+  <!-- ==================
+  PAGE CONTENT
+  ================== -->
   <div class="h1">
     <h1>Web制作</h1>
   </div>
 
-  <!-- Projects -->
   <main class="programming_projects" aria-label="projects">
     <div class="project-row">
-      <a class="project-btn" href="https://alecmcclendon.github.io/ZenHP" target="_blank" rel="noopener">
+      <a
+        class="project-btn"
+        href="https://bandme.onrender.com"
+        target="_blank"
+        rel="noopener"
+      >
+        BANDme!
+      </a>
+      <a
+        class="github-link"
+        href="https://github.com/alecmcclendon/bandme"
+        target="_blank"
+        rel="noopener"
+      >
+        <img src="programming/github_link.png" alt="ZenHP GitHub" />
+      </a>
+    </div>
+
+    <div class="project-row">
+      <a
+        class="project-btn"
+        href="https://alecmcclendon.github.io/ZenHP"
+        target="_blank"
+        rel="noopener"
+      >
         ZenHP
       </a>
-      <a class="github-link" href="https://github.com/alecmcclendon/ZenHP" target="_blank" rel="noopener">
+      <a
+        class="github-link"
+        href="https://github.com/alecmcclendon/ZenHP"
+        target="_blank"
+        rel="noopener"
+      >
         <img src="programming/github_link.png" alt="ZenHP GitHub" />
       </a>
     </div>
@@ -82,11 +124,53 @@
       <a class="project-btn" href="sanriogacha.html" target="_blank" rel="noopener">
         Sanrioガチャ!!
       </a>
-      <a class="github-link" href="https://github.com/alecmcclendon/sanriogacha" target="_blank" rel="noopener">
+      <a
+        class="github-link"
+        href="https://github.com/alecmcclendon/sanriogacha"
+        target="_blank"
+        rel="noopener"
+      >
         <img src="programming/github_link.png" alt="Sanrioガチャ GitHub" />
       </a>
     </div>
   </main>
+
+  <!-- ==================
+  FOOTER
+  ================== -->
+  <footer class="mini-footer" aria-label="Site footer links">
+    <nav class="footer-nav" aria-label="Main pages">
+      <a href="index.html">ホーム</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="self-intro.html">私</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="resume.html">履歴書</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <nav class="footer-subnav" aria-label="Works pages">
+      <a href="webDesign.html">Web制作</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="programming.html">プログラミング</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="banner.html">グラフィック制作</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="logo.html">ロゴデザイン</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="animation.html">アニメーション</a>
+      <span class="sep" aria-hidden="true">｜</span>
+
+      <a href="mockup.html">モックアップ</a>
+    </nav>
+  </footer>
 
   <script src="webDesign.js"></script>
 </body>
