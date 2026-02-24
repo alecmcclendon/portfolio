@@ -64,3 +64,16 @@ if (worksItem && worksToggle) {
     worksToggle.setAttribute("aria-expanded", String(willOpen));
   });
 }
+
+
+
+/* ==================
+’ようこそ’を消す
+================== */
+
+document.addEventListener("DOMContentLoaded", function() {
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  if (isSafari) {
+    document.body.classList.add('is-safari');
+  }
+});
