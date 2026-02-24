@@ -341,7 +341,8 @@ PAGE CONTENT
 }
 
 .github-link img {
-  width: clamp(34px, 6vw, 48px);
+  /* width: clamp(34px, 6vw, 90px); */
+  width: 80px;
   height: auto;
   display: block;
   transition: transform 0.2s ease;
