@@ -281,6 +281,8 @@ FULLSCREEN MENU
 /* ==================
 PAGE CONTENT
 ================== */
+
+
 .page {
   min-height: calc(100vh - 50px);
 }
@@ -311,6 +313,23 @@ PAGE CONTENT
   gap: clamp(14px, 2vw, 28px);
   align-items: start;
 }
+
+
+
+body.is-safari .hero-left {
+  display: none !important;
+}
+
+body.is-safari .content {
+  display: block;
+  padding-left: 50px;
+}
+body.is-safari .hero-right {
+  width: 100%;
+}
+
+
+
 
 .hero-title-vertical {
   margin: 0;
@@ -359,6 +378,10 @@ PAGE CONTENT
   .rail { display: none; }
   .hero-left, .hero-title-vertical { display: none; }
   .layout { display: block; }
+
+  body.is-safari .content {
+    padding-left: 0;
+  }
 
   .content {
     padding: 16px;
