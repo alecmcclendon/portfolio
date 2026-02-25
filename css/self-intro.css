@@ -294,15 +294,24 @@ PAGE CONTENT
   font-size: 30px;
 }
 
+.face{
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
 .face img {
-  width: 90%;
+  /* width: 90%; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .container {
-  width: 90.5%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
