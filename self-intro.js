@@ -68,13 +68,13 @@ if (worksItem && worksToggle) {
 /* ==================
 CARDS
 ================== */
-document.querySelectorAll(".card").forEach((card) => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("flipped");
-    card.classList.add("no-shadow");
+// document.querySelectorAll(".card").forEach((card) => {
+//   card.addEventListener("click", () => {
+//     card.classList.toggle("flipped");
+//     card.classList.add("no-shadow");
 
-    setTimeout(() => {
-      card.classList.remove("no-shadow");
-    }, 800);
-  });
-});
+//     setTimeout(() => {
+//       card.classList.remove("no-shadow");
+//     }, 800);
+//   });
+// });
