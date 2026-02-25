@@ -313,6 +313,7 @@ PAGE CONTENT
 .container {
   width: 90%;
   margin: 0 auto;
+  padding-bottom: 50px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
