@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>webDesign</title>
-  <link rel="stylesheet" href="css/webDesign.css?v=4" />
+  <link rel="stylesheet" href="css/webDesign.css?v=6" />
 </head>
 
 <body>
@@ -82,7 +82,7 @@
   </div>
 
   <main class="programming_projects" aria-label="projects">
-    <div class="project-row">
+    <div class="project-item">
       <a
         class="project-btn"
         href="https://bandme.onrender.com"
@@ -91,17 +91,80 @@
       >
         BANDme!
       </a>
-      <a
-        class="github-link"
-        href="https://github.com/alecmcclendon/bandme"
-        target="_blank"
-        rel="noopener"
-      >
-        <img src="programming/github_link.png" alt="ZenHP GitHub" />
-      </a>
+
+      <div class="project-links">
+        <a
+          class="project-text-link"
+          href="https://github.com/alecmcclendon/bandme"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <button
+          type="button"
+          class="info-btn"
+          data-title="BANDme!"
+          data-info='
+            <div class="modal-lead">
+              <p>音楽仲間（個人／バンド）を見つけてつながれる、SNS風のWebアプリです。</p>
+              <p>投稿フィードで募集・近況を発信し、ジャンル・楽器・タグで検索。気になる相手とはDMで連絡できます。</p>
+              <p>スマホ版／パソコン版どちらでも快適に使えるレスポンシブ対応です。</p>
+            </div>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">使用技術</h3>
+            <ul class="modal-list">
+              <li><strong>バックエンド</strong>：Python / Flask</li>
+              <li><strong>フロントエンド</strong>：HTML / CSS / JavaScript</li>
+              <li><strong>ツール</strong>：VS Code / Adobe Illustrator</li>
+              <li><strong>ストレージ</strong>：Cloudflare R2</li>
+              <li><strong>デプロイ</strong>：Render / GitHub</li>
+            </ul>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">主な機能</h3>
+            <h4 class="modal-h4">レスポンシブUI（スマホ／PC対応）</h4>
+            <ul class="modal-list">
+              <li>画面幅に応じてレイアウトが切り替わる設計</li>
+              <li>スマホではフィルターをアイコンで開閉して操作しやすいUI</li>
+              <li>モーダル／チャット画面もスマホで全画面最適化</li>
+            </ul>
+            <h4 class="modal-h4">投稿フィード（画像／動画対応）</h4>
+            <ul class="modal-list">
+              <li>キャプション・ジャンル・自分の楽器・相手の楽器・タグを登録</li>
+              <li>投稿の編集／削除（本人のみ）</li>
+              <li>「自分の投稿だけ表示」トグル</li>
+            </ul>
+            <h4 class="modal-h4">検索／フィルター</h4>
+            <ul class="modal-list">
+              <li>ロール：個人のみ／バンドのみ／全員</li>
+              <li>ジャンル・楽器・タグ（複数）・キーワード検索（投稿文／タグ／ユーザー名）</li>
+            </ul>
+            <h4 class="modal-h4">プロフィール</h4>
+            <ul class="modal-list">
+              <li>ユーザー名・bio（自己紹介）編集</li>
+              <li>アイコン画像アップロード</li>
+              <li>ショーケース（画像／動画をまとめて掲載）</li>
+            </ul>
+            <h4 class="modal-h4">フォロー</h4>
+            <ul class="modal-list">
+              <li>フォロー／アンフォロー</li>
+              <li>フォロワー／フォロー一覧</li>
+            </ul>
+            <h4 class="modal-h4">チャット（DM）</h4>
+            <ul class="modal-list">
+              <li>1対1の会話</li>
+              <li>既読管理・未読表示</li>
+              <li>自分のメッセージ削除／会話の非表示（自分側のみ）</li>
+            </ul>
+          '
+        >
+          概要
+        </button>
+      </div>
     </div>
 
-    <div class="project-row">
+    <div class="project-item">
       <a
         class="project-btn"
         href="https://alecmcclendon.github.io/ZenHP"
@@ -110,30 +173,136 @@
       >
         ZenHP
       </a>
-      <a
-        class="github-link"
-        href="https://github.com/alecmcclendon/ZenHP"
-        target="_blank"
-        rel="noopener"
-      >
-        <img src="programming/github_link.png" alt="ZenHP GitHub" />
-      </a>
+
+      <div class="project-links">
+        <a
+          class="project-text-link"
+          href="https://github.com/alecmcclendon/ZenHP"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <button
+          type="button"
+          class="info-btn"
+          data-title="ZenHP"
+          data-info='
+            <div class="modal-lead">
+              <p>ZenHP は、アルバイト先の会社向けに制作したコーポレートサイト（静的Webサイト）です。</p>
+              <p>PC／スマートフォンの両方で見やすいようにレスポンシブ対応を行い、シンプルで分かりやすい導線を意識して作成しました。</p>
+            </div>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">使用技術</h3>
+            <ul class="modal-list">
+              <li><strong>フロントエンド</strong>：HTML / CSS / JavaScript</li>
+              <li><strong>デプロイ</strong>：GitHub Pages</li>
+            </ul>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">主なポイント</h3>
+            <ul class="modal-list">
+              <li>企業サイトを想定した複数ページ構成</li>
+              <li>レスポンシブ対応（PC / Mobile）</li>
+              <li>迷わないナビゲーションと読みやすいレイアウト</li>
+              <li>画像などの静的ファイルを assets/ で管理</li>
+            </ul>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">ページ一覧</h3>
+            <ul class="modal-list">
+              <li>index.html：トップページ</li>
+              <li>company.html：会社情報ページ</li>
+              <li>history.html：沿革ページ</li>
+              <li>contact.html：お問い合わせページ</li>
+              <li>assets/：画像・素材など</li>
+            </ul>
+          '
+        >
+          概要
+        </button>
+      </div>
     </div>
 
-    <div class="project-row">
-      <a class="project-btn" href="sanriogacha.html" target="_blank" rel="noopener">
-        Sanrioガチャ!!
-      </a>
+    <div class="project-item">
       <a
-        class="github-link"
-        href="https://github.com/alecmcclendon/sanriogacha"
+        class="project-btn"
+        href="sanriogacha.html"
         target="_blank"
         rel="noopener"
       >
-        <img src="programming/github_link.png" alt="Sanrioガチャ GitHub" />
+        Sanrioガチャ!!
       </a>
+
+      <div class="project-links">
+        <a
+          class="project-text-link"
+          href="https://github.com/alecmcclendon/sanriogacha"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <button
+          type="button"
+          class="info-btn"
+          data-title="Sanrioガチャ!!"
+          data-info='
+            <div class="modal-lead">
+              <p>自作のサンリオ風キャラ動画をランダム再生し、対応するQRコードを自動表示する、ガチャ風のWebアプリです。</p>
+              <p>Web上で手軽に楽しめるガチャ体験を再現しています。</p>
+            </div>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">使用技術</h3>
+            <ul class="modal-list">
+              <li><strong>バックエンド</strong>：Python / CGI</li>
+              <li><strong>フロントエンド</strong>：HTML / CSS / JavaScript</li>
+              <li><strong>デザインツール</strong>：Illustrator / After Effects</li>
+              <li><strong>メディア管理</strong>：動画（MP4） + QRコード画像（PNG）</li>
+              <li><strong>デプロイ</strong>：Render</li>
+            </ul>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">主な機能</h3>
+            <ul class="modal-list">
+              <li>ワンクリックでキャラ動画をランダム再生</li>
+              <li>キャラごとに異なるレア度を設定（超大当たり：3% / 大当たり：7% / 普通：90%）</li>
+              <li>再生された動画に対応するQRコードを自動表示</li>
+              <li>QRコード経由でスマホにキャラを保存可能</li>
+              <li>軽量構成で高速レスポンス</li>
+            </ul>
+          '
+        >
+          概要
+        </button>
+      </div>
     </div>
   </main>
+
+  <!-- ==================
+  PROJECT MODAL
+  ================== -->
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="project-modal-backdrop" data-modal-close="true"></div>
+
+    <div
+      class="project-modal-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <button
+        type="button"
+        class="modal-close"
+        id="modalClose"
+        aria-label="閉じる"
+      >
+        ×
+      </button>
+
+      <h2 id="modalTitle"></h2>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
 
   <!-- ==================
   FOOTER
@@ -172,6 +341,9 @@
     </nav>
   </footer>
 
+  <!-- ==================
+  SCRIPT
+  ================== -->
   <script src="webDesign.js"></script>
 </body>
 </html>

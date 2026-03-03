@@ -77,36 +77,200 @@
   <!-- ==================
   PAGE CONTENT
   ================== -->
-  <div class="h1">
+    <div class="h1">
     <h1>プログラミング</h1>
   </div>
 
   <main class="programming_projects" aria-label="projects">
-    <div class="project-row">
-      <a class="project-btn" href="https://bandme.onrender.com" target="_blank" rel="noopener">
+    <div class="project-item">
+      <a
+        class="project-btn"
+        href="https://bandme.onrender.com"
+        target="_blank"
+        rel="noopener"
+      >
         BANDme!
       </a>
-      <a class="github-link" href="https://github.com/alecmcclendon/bandme" target="_blank" rel="noopener">
-        <img src="programming/github_link.png" alt="Sanrioガチャ GitHub" />
-      </a>
-    </div>
-    
-    <div class="project-row">
-      <a class="project-btn" href="sanriogacha.html" target="_blank" rel="noopener">
-        Sanrioガチャ!!
-      </a>
-      <a class="github-link" href="https://github.com/alecmcclendon/sanriogacha" target="_blank" rel="noopener">
-        <img src="programming/github_link.png" alt="Sanrioガチャ GitHub" />
-      </a>
+
+      <div class="project-links">
+        <a
+          class="project-text-link"
+          href="https://github.com/alecmcclendon/bandme"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <button
+          type="button"
+          class="info-btn"
+          data-title="BANDme!"
+          data-info='
+            <div class="modal-lead">
+              <p>音楽仲間（個人／バンド）を見つけてつながれる、SNS風のWebアプリです。</p>
+              <p>投稿フィードで募集・近況を発信し、ジャンル・楽器・タグで検索。気になる相手とはDMで連絡できます。</p>
+              <p>スマホ版／パソコン版どちらでも快適に使えるレスポンシブ対応です。</p>
+            </div>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">使用技術</h3>
+            <ul class="modal-list">
+              <li><strong>バックエンド</strong>：Python / Flask</li>
+              <li><strong>フロントエンド</strong>：HTML / CSS / JavaScript</li>
+              <li><strong>ツール</strong>：VS Code / Adobe Illustrator</li>
+              <li><strong>ストレージ</strong>：Cloudflare R2</li>
+              <li><strong>デプロイ</strong>：Render / GitHub</li>
+            </ul>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">主な機能</h3>
+            <h4 class="modal-h4">レスポンシブUI（スマホ／PC対応）</h4>
+            <ul class="modal-list">
+              <li>画面幅に応じてレイアウトが切り替わる設計</li>
+              <li>スマホではフィルターをアイコンで開閉して操作しやすいUI</li>
+              <li>モーダル／チャット画面もスマホで全画面最適化</li>
+            </ul>
+            <h4 class="modal-h4">投稿フィード（画像／動画対応）</h4>
+            <ul class="modal-list">
+              <li>キャプション・ジャンル・自分の楽器・相手の楽器・タグを登録</li>
+              <li>投稿の編集／削除（本人のみ）</li>
+              <li>「自分の投稿だけ表示」トグル</li>
+            </ul>
+            <h4 class="modal-h4">検索／フィルター</h4>
+            <ul class="modal-list">
+              <li>ロール：個人のみ／バンドのみ／全員</li>
+              <li>ジャンル・楽器・タグ（複数）・キーワード検索（投稿文／タグ／ユーザー名）</li>
+            </ul>
+            <h4 class="modal-h4">プロフィール</h4>
+            <ul class="modal-list">
+              <li>ユーザー名・bio（自己紹介）編集</li>
+              <li>アイコン画像アップロード</li>
+              <li>ショーケース（画像／動画をまとめて掲載）</li>
+            </ul>
+            <h4 class="modal-h4">フォロー</h4>
+            <ul class="modal-list">
+              <li>フォロー／アンフォロー</li>
+              <li>フォロワー／フォロー一覧</li>
+            </ul>
+            <h4 class="modal-h4">チャット（DM）</h4>
+            <ul class="modal-list">
+              <li>1対1の会話</li>
+              <li>既読管理・未読表示</li>
+              <li>自分のメッセージ削除／会話の非表示（自分側のみ）</li>
+            </ul>
+          '
+        >
+          概要
+        </button>
+      </div>
     </div>
 
-    <div class="project-row">
-      <a class="project-btn" href="https://inventorymanager-u2gc.onrender.com" target="_blank" rel="noopener">
+
+    <div class="project-item">
+      <a
+        class="project-btn"
+        href="sanriogacha.html"
+        target="_blank"
+        rel="noopener"
+      >
+        Sanrioガチャ!!
+      </a>
+
+      <div class="project-links">
+        <a
+          class="project-text-link"
+          href="https://github.com/alecmcclendon/sanriogacha"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <button
+          type="button"
+          class="info-btn"
+          data-title="Sanrioガチャ!!"
+          data-info='
+            <div class="modal-lead">
+              <p>自作のサンリオ風キャラ動画をランダム再生し、対応するQRコードを自動表示する、ガチャ風のWebアプリです。</p>
+              <p>Web上で手軽に楽しめるガチャ体験を再現しています。</p>
+            </div>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">使用技術</h3>
+            <ul class="modal-list">
+              <li><strong>バックエンド</strong>：Python / CGI</li>
+              <li><strong>フロントエンド</strong>：HTML / CSS / JavaScript</li>
+              <li><strong>デザインツール</strong>：Illustrator / After Effects</li>
+              <li><strong>メディア管理</strong>：動画（MP4） + QRコード画像（PNG）</li>
+              <li><strong>デプロイ</strong>：Render</li>
+            </ul>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">主な機能</h3>
+            <ul class="modal-list">
+              <li>ワンクリックでキャラ動画をランダム再生</li>
+              <li>キャラごとに異なるレア度を設定（超大当たり：3% / 大当たり：7% / 普通：90%）</li>
+              <li>再生された動画に対応するQRコードを自動表示</li>
+              <li>QRコード経由でスマホにキャラを保存可能</li>
+              <li>軽量構成で高速レスポンス</li>
+            </ul>
+          '
+        >
+          概要
+        </button>
+      </div>
+    </div>
+
+
+    <div class="project-item">
+      <a
+        class="project-btn"
+        href="sanriogacha.html"
+        target="_blank"
+        rel="noopener"
+      >
         商品管理
       </a>
-      <a class="github-link" href="https://github.com/alecmcclendon/InventoryManager/" target="_blank" rel="noopener">
-        <img src="programming/github_link.png" alt="商品管理 GitHub" />
-      </a>
+
+      <div class="project-links">
+        <a
+          class="project-text-link"
+          href="https://github.com/alecmcclendon/sanriogacha"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <button
+          type="button"
+          class="info-btn"
+          data-title="InventoryManager"
+          data-info='
+            <div class="modal-lead">
+              <p>フロントエンド・バックエンドをシンプルに構築した、在庫管理用のWebアプリです。</p>
+              <p>小規模なお店やフリーランスの方向けに、製品の検索・表示・ソートを簡単に行えます。</p>
+            </div>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">使用技術</h3>
+            <ul class="modal-list">
+              <li><strong>バックエンド</strong>：Python / Flask</li>
+              <li><strong>フロントエンド</strong>：HTML / CSS</li>
+              <li><strong>データベース</strong>：SQLite</li>
+              <li><strong>デプロイ</strong>：Render</li>
+            </ul>
+            <hr class="modal-sep">
+            <h3 class="modal-h3">主な機能</h3>
+            <ul class="modal-list">
+              <li>商品番号やキーワードによる検索</li>
+              <li>商品名・価格・在庫情報の表示</li>
+              <li>編集や削除の機能</li>
+              <li>「価格順」「在庫順」などのソート機能</li>
+              <li>Web上で誰でもアクセス可能なデモサイト</li>
+            </ul>
+          '
+        >
+          概要
+        </button>
+      </div>
     </div>
   </main>
 
