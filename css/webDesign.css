@@ -12,6 +12,8 @@ body {
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
+  color: #111;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
 }
 
 /* ==================
@@ -80,7 +82,7 @@ header .header nav > ul a img:hover {
 }
 
 /* ==================
-HAMBURGER (USED AS WHITE X ON MENU)
+HAMBURGER
 ================== */
 .ham-menu {
   width: 30px;
@@ -93,7 +95,6 @@ HAMBURGER (USED AS WHITE X ON MENU)
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   z-index: 1200;
   -webkit-tap-highlight-color: transparent;
 }
@@ -122,13 +123,13 @@ HAMBURGER (USED AS WHITE X ON MENU)
 }
 
 /* ==================
-MENU OPEN BEHAVIOR (ONLY X BLEEDS THROUGH)
+MENU OPEN BEHAVIOR
 ================== */
 body.menu-open { overflow: hidden; }
 
 body.menu-open .ham-menu span { background-color: #fff; }
 
-body.menu-open .ham-menu{
+body.menu-open .ham-menu {
   position: fixed;
   top: 14px;
   right: 25px;
@@ -136,7 +137,7 @@ body.menu-open .ham-menu{
   pointer-events: auto;
 }
 
-body.menu-open header{
+body.menu-open header {
   background: transparent;
   backdrop-filter: none;
   box-shadow: none;
@@ -144,7 +145,7 @@ body.menu-open header{
 }
 
 body.menu-open .logo-link,
-body.menu-open header .header nav > ul{
+body.menu-open header .header nav > ul {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -165,7 +166,7 @@ FULLSCREEN MENU
 .menu-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.72);
+  background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(6px);
 }
 
@@ -173,12 +174,10 @@ FULLSCREEN MENU
   position: relative;
   height: 100%;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
   padding: 90px 20px 30px;
 }
 
@@ -186,23 +185,19 @@ FULLSCREEN MENU
   list-style: none;
   padding: 8px 0 12px;
   margin: 0;
-
   width: min(520px, 92vw);
   text-align: center;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   max-height: calc(100vh - 140px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-.menu-list::-webkit-scrollbar{
+.menu-list::-webkit-scrollbar {
   width: 0;
   height: 0;
   display: none;
@@ -279,54 +274,58 @@ PAGE CONTENT
   margin-bottom: 50px;
 }
 
-.h1 h1 { font-weight: 700; }
+.h1 h1 {
+  font-weight: 700;
+}
 
 .programming_projects {
   width: min(900px, 92vw);
   margin: 0 auto;
   display: grid;
-  gap: clamp(14px, 2vw, 18px);
-  padding-bottom: 24px;
+  gap: 24px;
+  padding-bottom: 36px;
 }
 
-.project-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: clamp(10px, 2vw, 14px);
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 18px 18px 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
 }
 
 .project-btn {
   display: block;
   text-align: center;
   text-decoration: none;
-
-  border: 2px solid #000;
-  background: #000;
+  border: 2px solid #000000;
+  /* background: linear-gradient(135deg, #111 0%, #2a2a2a 100%); */
+  background-color: black;
   color: #fff;
   font-weight: 700;
-
   font-size: clamp(16px, 2.2vw, 22px);
-  padding: clamp(12px, 1.2vw, 16px) clamp(14px, 2vw, 18px);
-
-  border-radius: 14px;
+  padding: clamp(14px, 1.4vw, 18px) clamp(14px, 2vw, 18px);
+  border-radius: 16px;
   line-height: 1;
   letter-spacing: 0.02em;
-
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-  transition: transform 0.15s ease, background-color 0.2s ease,
-    border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .project-btn:hover {
-  background: #2c2c2c;
-  border-color: #2c2c2c;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.16);
+  background-color: #161616;
+  border: 2px solid #161616;
+  opacity: 0.96;
 }
 
 .project-btn:active {
   transform: translateY(0);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.14);
 }
 
 .project-btn:focus-visible {
@@ -334,31 +333,162 @@ PAGE CONTENT
   outline-offset: 3px;
 }
 
-.github-link {
+.project-links {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  padding-top: 12px;
+  padding-left: 2px;
+  flex-wrap: wrap;
 }
 
-.github-link img {
-  /* width: clamp(34px, 6vw, 90px); */
-  width: 80px;
-  height: auto;
+.project-text-link,
+.info-btn {
+  color: #000000;
+  background: #f4f4f4;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 9px 14px;
+  margin: 0;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1.2;
+  border-radius: 999px;
+  transition: transform 0.16s ease, background-color 0.16s ease, border-color 0.16s ease;
+}
+
+.project-text-link:hover,
+.info-btn:hover {
+  background: #ececec;
+  border-color: rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+.project-text-link:focus-visible,
+.info-btn:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.45);
+  outline-offset: 3px;
+}
+
+/* ==================
+PROJECT MODAL
+================== */
+body.modal-open {
+  overflow: hidden;
+}
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: none;
+}
+
+.project-modal.is-open {
   display: block;
-  transition: transform 0.2s ease;
 }
 
-.github-link img:hover {
-  transform: scale(1.08);
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(6px);
 }
 
-@media (max-width: 520px) {
-  .project-row { grid-template-columns: 1fr; }
+.project-modal-panel {
+  position: relative;
+  width: min(720px, 92vw);
+  margin: min(8vh, 60px) auto 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  color: #111;
+  border-radius: 24px;
+  padding: 28px 24px 22px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.24);
+}
 
-  .github-link {
-    justify-content: flex-start;
-    padding-left: 8px;
-  }
+.project-modal-panel h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: 10px;
+  padding-right: 36px;
+  line-height: 1.2;
+}
+
+.modal-body {
+  margin-top: 6px;
+  max-height: min(68vh, 600px);
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+}
+
+.modal-lead p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0 0 10px;
+  color: #000000;
+}
+
+.modal-sep {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.14) 14%, rgba(0, 0, 0, 0.14) 86%, transparent 100%);
+  margin: 18px 0;
+  color: black;
+}
+
+.modal-h3 {
+  font-size: 18px;
+  margin: 0 0 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.modal-h4 {
+  font-size: 15px;
+  margin: 16px 0 8px;
+  font-weight: 800;
+  color: #000000;
+}
+
+.modal-list {
+  margin: 0 0 4px 1.2em;
+  padding: 0;
+}
+
+.modal-list li {
+  font-size: 14px;
+  line-height: 1.85;
+  margin-bottom: 2px;
+  color: #222;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: #f4f4f4;
+  color: #000000;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.modal-close:hover {
+  background: #ebebeb;
+  /* transform: rotate(90deg); */
+}
+
+.modal-close:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+  outline-offset: 2px;
 }
 
 /* ==================
@@ -402,7 +532,69 @@ FOOTER
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+
+/* ==================
+RESPONSIVE
+================== */
 @media (max-width: 900px) {
   .mini-footer .footer-nav { font-size: 12px; }
   .mini-footer .footer-subnav { font-size: 10.5px; }
+}
+
+@media (max-width: 640px) {
+  .h1 {
+    width: calc(100% - 10vw);
+    min-width: 0;
+    margin-bottom: 34px;
+  }
+
+  .programming_projects {
+    gap: 18px;
+    padding-bottom: 28px;
+  }
+
+  .project-item {
+    padding: 14px 14px 12px;
+    border-radius: 18px;
+  }
+
+  .project-links {
+    gap: 8px;
+  }
+
+  .project-text-link,
+  .info-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .project-modal-panel {
+    width: min(94vw, 720px);
+    margin: 4vh auto 0;
+    padding: 24px 18px 18px;
+    border-radius: 20px;
+  }
+
+  .modal-body {
+    max-height: 72vh;
+    padding-right: 4px;
+  }
+
+  .modal-lead p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .modal-h3 {
+    font-size: 17px;
+  }
+
+  .modal-h4 {
+    font-size: 14px;
+  }
+
+  .modal-list li {
+    font-size: 13px;
+    line-height: 1.8;
+  }
 }
